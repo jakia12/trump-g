@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRUMP GAME</title>
+  <link rel="shortcut icon" href="./images/trump.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- ready to deploy -->
+  <style>
+    /* Background video styling */
+    .background-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    /* Ensuring other content stays on top of the video */
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      /* Adjust text color for visibility */
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+
+  <!-- marquee style -->
+
+  <style>
+    .marquee-container {
+      height: 300px;
+      /* Set height for the marquee */
+      overflow: hidden;
+      /* Hide overflow */
+      position: relative;
+      /* Relative positioning for animation */
+    }
+
+    .marquee {
+      position: absolute;
+      width: 100%;
+      animation: scroll 30s linear infinite;
+      /* Adjust duration for slower speed */
+    }
+
+    .marquee img {
+      width: 100%;
+      /* Full width for each image */
+      height: auto;
+      /* Maintain aspect ratio */
+      display: block;
+      /* Prevent extra space below images */
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateY(0);
+      }
+
+      /* Start from the first image */
+      20% {
+        transform: translateY(0);
+      }
+
+      /* Hold the first image */
+      25% {
+        transform: translateY(-100%);
+      }
+
+      /* Move to the second image */
+      45% {
+        transform: translateY(-100%);
+      }
+
+      /* Hold the second image */
+      50% {
+        transform: translateY(-200%);
+      }
+
+      /* Move to the third image */
+      70% {
+        transform: translateY(-200%);
+      }
+
+      /* Hold the third image */
+      75% {
+        transform: translateY(-300%);
+      }
+
+      /* Move to the fourth image */
+      95% {
+        transform: translateY(-300%);
+      }
+
+      /* Hold the fourth image */
+      100% {
+        transform: translateY(-400%);
+      }
+
+      /* Move to the fifth image */
+    }
+  </style>
+
+
+
+
+  <style>
+    /* Popup styling */
+    #popupModal .modal-dialog {
+      max-width: 400px;
+    }
+
+    /* Banner image spacing */
+    .banner-content {
+      padding: 20px;
+    }
+
+    /* Social icons */
+    .social-icons a {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body class="content">
+  <video class="background-video" autoplay muted loop>
+    <source src="./images/game.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Popup Modal -->
+  <div style="background: #000;" class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div style="background: rgb(253, 184, 54);" class="modal-content text-center">
+        <img style="border-radius: 20px; padding: 8%" src="./images/trump.jpg" alt="Popup Image" class="img-fluid" />
+        <h5 style="color: black;" class="modal-title mt-3" id="popupModalLabel">
+          Welcome to Our Site
+        </h5>
+        <div class="modal-body">
+          <button style="font-weight: bold; font-size: 25px; letter-spacing: 8px;" type="button" class="btn btn-danger"
+            data-bs-dismiss="modal">
+            FIRE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav style="background-color: rgb(54, 45, 13);" class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img style="width: 75px; height: 80px" src="./images/logo.png" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a style="color: white;" class="nav-link" href="/">Home</a></li>
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link" href="#tokenomics">Tokenomics</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link" href="#howtobuy">How to Buy</a>
+          </li>
+          <li class="nav-item border rounded"><a style="color: white;" class="nav-link" href="chartlink">CHART</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner Section -->
+  <section class="container py-5 my-5">
+    <div class="row">
+      <div class="col-md-6 banner-content my-5 mt-5">
+        <h2>Welcome to Our Project</h2>
+        <p>Here’s an introduction to the project and what it offers.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="./images/logo.png" alt="Banner Image" class="img-fluid" />
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- About Section -->
+
+  <div style="margin-top: 120px;" class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Column (Image) -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <img src="./images/warrior.png" alt="About Image" class="img-fluid rounded"
+          style="max-width: 100%; height: auto;">
+      </div>
+
+      <!-- Right Column (Title and Text) -->
+      <div class="col-md-6 text-center">
+        <h2>About Us</h2>
+        <p class="mt-3">
+          We are on a mission to revolutionize the blockchain space. With our innovative ideas and dedicated team, we
+          aim to bring forth a project that captivates and empowers our community. Join us on our journey to push
+          boundaries and create something remarkable together.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Section Title -->
+  <!-- <section class="text-center my-5">
+      <h2>Main Section Title</h2>
+    </section> -->
+
+  <!-- Video Section -->
+  <!-- <section class="container my-5">
+      <div class="ratio ratio-16x9">
+        <video style="border-radius: 12px" controls autoplay loop>
+          <source src="./images/game.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section> -->
+
+  <section style="margin-top: 120px;" id="tokenomics" class="text-center ">
+    <h2>TOKENOMICS</h2>
+  </section>
+
+  <div class="container my-5">
+    <div class="row align-items-center">
+
+      <!-- Left Column (Tokenomics Cards) -->
+      <div class="col-md-6">
+        <div class="card mb-4" style="background-color: #f8f9fa;">
+          <div class="card-body text-center">
+            <h5 class="card-title">Total Supply : 1 Billion</h5>
+          </div>
+        </div>
+        <div class="card mb-4" style="background-color: #e9ecef;">
+          <div class="card-body text-center">
+            <h5 class="card-title">Ticker : $TRUMP</h5>
+          </div>
+        </div>
+        <div class="card mb-4" style="background-color: #f8f9fa;">
+          <div class="card-body text-center">
+            <h5 class="card-title">CHAIN : ETHEREUM</h5>
+          </div>
+        </div>
+        <div class="card mb-4" style="background-color: #f8f9fa;">
+          <div class="card-body text-center">
+            <h5 class="card-title">LP : BURNED</h5>
+          </div>
+        </div>
+        <div class="card mb-4" style="background-color: #f8f9fa;">
+          <div class="card-body text-center">
+            <h5 class="card-title">TAX : 0/0</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (Image) -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <img src="./images/img.png" alt="Tokenomics" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+      </div>
+
+      <!-- <div class="col-md-6">
+            <div class="marquee-container d-flex justify-content-center">
+              <div class="marquee">
+                <img src="./images/img.png" alt="Image 1">
+                <img src="./images/img2.png" alt="Image 1">
+                <img src="./images/img3.png" alt="Image 1">
+                <img src="./images/img4.png" alt="Image 1">
+                <img src="./images/img5.png" alt="Image 1">
+              </div>
+            </div>
+          </div> -->
+
+    </div>
+  </div>
+
+
+  <!-- How to Buy Section -->
+  <section style="margin-top: 120px;" id="howtobuy" class="container ">
+    <h2 class="text-center">How To Buy</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+      <div class="col">
+        <div class="card h-100 text-center">
+          <img style="width: 150px; text-align: center" src="./images/metamask.png" class="card-img-top mx-auto d-block"
+            alt="Step 1" />
+          <div class="card-body">
+            <h5 class="card-title my-5">Arm Yourself with a Wallet</h5>
+            <p style="font-size: 13px" class="card-text">
+              Download a powerful wallet like MetaMask or Trust Wallet. Create
+              your secure base, guard your recovery phrase like a weapon, and
+              fortify with strong passwords. You’re setting up the foundation
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center">
+          <img style="width: 150px" src="./images/eth.png" class="card-img-top mx-auto d-block" alt="Step 2" />
+          <div class="card-body">
+            <h5 class="card-title my-5">Secure Your ETH Ammo</h5>
+            <p style="font-size: 13px" class="card-text">
+              Buy Ethereum (ETH) for firepower — essential for taking down
+              enemies and covering transaction costs. Grab it through your
+              wallet or transfer from an exchange like Coinbase.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center">
+          <img style="width: 150px" src="./images/uniswap.png" class="card-img-top mx-auto d-block" alt="Step 3" />
+          <div class="card-body">
+            <h5 class="card-title my-5">Enter the Battlefield</h5>
+            <p style="font-size: 13px" class="card-text">
+              Launch Uniswap or another DEX, then link your wallet to
+              infiltrate the trading zone. Confirm connections carefully.
+              You’re ready to hunt down your token target; make sure your
+              arsenal is primed, and your ETH’s in position to strike.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center">
+          <img style="width: 150px" src="./images/logo.png" class="card-img-top mx-auto d-block" alt="Step 4" />
+          <div class="card-body">
+            <h5 class="card-title my-5">Strike and Conquer</h5>
+            <p style="font-size: 13px" class="card-text">
+              In the DEX, load your ETH, then paste your target token’s
+              contract address to lock in. Review the cost of attack (no gas
+              fees), then click Swap. Confirm the mission in your wallet,
+              await success, and claim victory as your token appears.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials Section -->
+  <section style="margin-top: 120px; margin-bottom: 50px;" class="container text-center ">
+    <h2>Follow Us</h2>
+    <div class="social-icons mt-3">
+      <a style="background-color: lightcyan;" href="#" class="btn ">
+        <img style="width: 45px; padding: 10%;" src="./images/tt.png" alt="" />
+      </a>
+      <a style="background-color: lightcyan;" href="#" class="btn ">
+        <img style="width: 45px; padding: 10%;" src="./images/tg.png" alt="" />
+      </a>
+      </a>
+      <a style="background-color: lightskyblue ;" href="#" class="btn ">
+        <img style="width: 45px; padding: 10%;" src="./images/dexs.png" alt="" />
+      </a>
+      </a>
+      <a style="background-color: lightcyan;" href="#" class="btn">
+        <img style="width: 45px; padding: 10%;" src="./images/dext.png" alt="" />
+      </a>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3">
+    <p style="color: black;">&copy; TRUMP. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Show popup on page load
+    document.addEventListener("DOMContentLoaded", function () {
+      var popupModal = new bootstrap.Modal(
+        document.getElementById("popupModal")
+      );
+      popupModal.show();
+    });
+  </script>
+</body>
+
+</html>
